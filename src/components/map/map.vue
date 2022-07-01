@@ -1,9 +1,11 @@
 <template>
-    <div class="mapa" ref="mapa"></div>
+    <div class="mapa" ref="mapa">
+        <slot></slot>
+    </div>
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, provide } from 'vue'
 import {useMap,useMapProps} from "./map.js"
 
 const props = defineProps({
@@ -13,6 +15,22 @@ const props = defineProps({
 const mapa = ref(null)
 
 const OL_map = useMap(mapa,props.zoom,props.centro)
+
+//hacer una funcion que los hijos (sin importar si son directos) tengan acceso a OL_map de este componente
+function getMapAfterInitialized(callbackOnFound){
+    const checkOlMapExists=()=>{
+        if(OL_map.value){
+            callbackOnFound(OL_map.value)
+        }else{
+            setTimeout(checkOlMapExists,20)
+        }
+    }
+    checkOlMapExists()
+}
+
+const getOlmap = provide("getOLMap",getMapAfterInitialized)
+
+
 
 </script>
 

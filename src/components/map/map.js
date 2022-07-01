@@ -9,11 +9,7 @@ export function useMap(target,zoom,center){
     const map = shallowRef(undefined)
     onMounted(()=>{
         map.value = new Map({
-            layers: [
-              new TileLayer({
-                source: new OSM(),
-              })
-            ],
+            layers: [],
             target: target.value,
             view: new View({
               center: center,
