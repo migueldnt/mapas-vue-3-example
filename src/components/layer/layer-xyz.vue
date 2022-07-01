@@ -1,5 +1,5 @@
 <script setup>
-import { ref, defineProps, watch } from 'vue'
+import { ref, watch } from 'vue'
 import { useLayer, useLayerProps } from './layer';
 
 import TileLayer from 'ol/layer/Tile';

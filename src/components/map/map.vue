@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps, provide } from 'vue'
+import { ref, provide } from 'vue'
 import {useMap,useMapProps} from "./map.js"
 
 const props = defineProps({

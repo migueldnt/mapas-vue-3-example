@@ -12,7 +12,7 @@ let opacidadlayermapa2 = ref(1)
   <img alt="Vue logo" src="./assets/logo.png" />
   
   <Mapa>
-    <LayerXyz></LayerXyz>
+    <LayerXyz url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}" />
   </Mapa>
   <hr>
   <div>

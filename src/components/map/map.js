@@ -3,7 +3,7 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import {OSM, } from 'ol/source';
 import {Tile as TileLayer, Vector as VectorLayer} from 'ol/layer';
-import 'ol/ol.css';
+
 
 export function useMap(target,zoom,center){
     const map = shallowRef(undefined)
